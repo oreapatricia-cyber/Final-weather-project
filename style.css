@@ -55,10 +55,6 @@ header {
   background-color: #d28ad2;
 }
 
-/* ------------------------------ */
-/* 🌡️ Weather Information */
-/* ------------------------------ */
-
 .weather-app-information {
   display: flex;
   flex-direction: column;

@@ -54,3 +54,35 @@ header {
 .search-form-button:hover {
   background-color: #d28ad2;
 }
+/* 🌡️ Weather Information Layout */
+.weather-app-information {
+  display: flex;
+  justify-content: space-between; /* pushes city info left, temp right */
+  align-items: center; /* vertically centers both sides */
+  margin-top: 30px;
+  gap: 20px;
+}
+
+/* Left side (city + details) */
+.weather-app-information h1 {
+  margin: 0;
+  font-size: 36px;
+  color: #4b3f72;
+}
+
+.weather-app-information p {
+  margin: 5px 0 0;
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Right side (temperature) */
+.current-temperature {
+  font-size: 48px;
+  font-weight: 500;
+  color: #4b3f72;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

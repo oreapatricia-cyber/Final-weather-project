@@ -1,5 +1,4 @@
-body {
-  background-color: beige;
+ background-color: beige;
   font-family: "Roboto", sans-serif;
 }
 .weather-app {
@@ -43,4 +42,3 @@ footer{
     flex-direction: column;
     justify-content: space-between;
     gap: 10px;
-}

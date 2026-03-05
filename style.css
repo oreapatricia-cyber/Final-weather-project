@@ -5,10 +5,6 @@ body {
   padding: 0;
 }
 
-/* ------------------------------ */
-/* 📦 App Container */
-/* ------------------------------ */
-
 .weather-app {
   background-color: white;
   max-width: 600px;

@@ -38,3 +38,8 @@ footer{
     font-size: 13px;
 
 }
+.weather-app-information{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

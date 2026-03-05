@@ -28,7 +28,7 @@ header {
 .search-form-input {
   padding: 13px;
   font-size: 16px;
-  border-radius: 6px;
+  border-radius: 8px;
   border: none;
   border-bottom: 2px solid #ccc;
   width: 70%;
@@ -82,4 +82,20 @@ header {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+footer {
+  border-top: 2px solid rgba(65, 50, 100, 0.08);
+  padding-top: 20px;
+  text-align: center;
+  font-size: 13px;
+  color: #777;
+}
+
+footer a {
+  color: plum;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
 }

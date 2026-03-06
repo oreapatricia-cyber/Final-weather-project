@@ -19,6 +19,7 @@ function handleSearch(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#search-form-input");
 
+  // FIX: actually call the API
   searchCity(searchInput.value);
 }
 

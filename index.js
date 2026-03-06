@@ -1,5 +1,5 @@
 function displayWeatherCondition(response) {
-  console.log(response.data);
+  console.log(response.data.temperature.current);
 }
 
 function searchCity(city) {

@@ -1,5 +1,5 @@
 function displayWeatherCondition(response) {
-  letweatherTemperature = document.querySelector("#temperature");
+  let temperatureElement = document.querySelector("#temperature");
   console.log(response.data.temperature.current);
 }
 

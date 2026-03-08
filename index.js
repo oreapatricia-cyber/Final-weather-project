@@ -12,6 +12,7 @@ function displayWeatherCondition(response) {
   let humidityElement = document.querySelector("#humidity");
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   let windspeedElement = document.querySelector("#wind-speed");
+  windspeedElement.innerHTML = `${response.data.wind.speed}km/h`;
 }
 function searchCity(city) {
   let apiKey = "94bo483a37241b0t66efb57f3864046e";

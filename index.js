@@ -1,5 +1,5 @@
 function displayWeatherCondition(response) {
-  console.log("API Response:", response.data);
+  console.log(response.data.temperature.current);
 
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");

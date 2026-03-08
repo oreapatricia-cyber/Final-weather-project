@@ -1,7 +1,7 @@
 function displayWeatherCondition(response) {
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
-
+  let timeElement = document.querySelector("#time");
   let temperature = response.data.temperature.current;
 
   temperatureElement.innerHTML = Math.round(temperature);

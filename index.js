@@ -1,10 +1,6 @@
-function searchCity(city) {
-  let apiKey = "94bo483a37241b0t66efb57f3864046e";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayWeatherCondition);
-}
-
 function displayWeatherCondition(response) {
+  console.log("API Response:", response.data);
+
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
   let timeElement = document.querySelector("#time");
@@ -22,11 +18,21 @@ function displayWeatherCondition(response) {
 
   let date = new Date(response.data.time * 1000);
   timeElement.innerHTML = formatDate(date);
+
+  // Weather icon
   iconElement.setAttribute(
-    "src"`http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`,
+    "src",
+    `https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`,
   );
   iconElement.setAttribute("alt", response.data.condition.description);
 }
+
+function searchCity(city) {
+  let apiKey = "94bo483a37241b0t66efb57f3864046e";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayWeatherCondition);
+}
+
 function formatDate(date) {
   let days = [
     "Sunday",
@@ -44,3 +50,14 @@ function formatDate(date) {
 
   return `${day} ${hours}:${minutes}`;
 }
+
+function handleSearch(event) {
+  event.preventDefault();
+  let searchInput = document.querySelector("#search-form-input");
+  searchCity(searchInput.value);
+}
+
+document.querySelector("#search-form").addEventListener("submit", handleSearch);
+
+// Load default city
+searchCity("Miami");

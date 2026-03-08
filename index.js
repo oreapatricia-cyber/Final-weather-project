@@ -10,7 +10,7 @@ function displayWeatherCondition(response) {
   descriptionElement.innerHTML = response.data.condition.description;
   temperatureElement.innerHTML = Math.round(response.data.temperature.current);
   let humidityElement = document.querySelector("#humidity");
- humidityElement.innerHTML=`${response.data.temperature.humidity}`%;
+ humidityElement.innerHTML=`${response.data.temperature.humidity}%`;
 
 function searchCity(city) {
   let apiKey = "94bo483a37241b0t66efb57f3864046e";

@@ -23,7 +23,7 @@ function searchCity(city) {
 }
 
 function formatDate(date) {
-  let day = date.getDay();
+  let day = days[date.getDay()];
   let minutes = date.getMinutes();
   let hours = date.getHours();
   let days = [

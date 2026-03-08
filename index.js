@@ -18,6 +18,7 @@ function displayWeatherCondition(response) {
 
   let date = new Date(response.data.time * 1000);
   timeElement.innerHTML = formatDate(date);
+
   iconElement.setAttribute(
     "src",
     `https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`,
@@ -57,5 +58,4 @@ function handleSearch(event) {
 
 document.querySelector("#search-form").addEventListener("submit", handleSearch);
 
-// Load default city
 searchCity("Miami");

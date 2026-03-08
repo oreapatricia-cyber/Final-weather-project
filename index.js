@@ -6,6 +6,7 @@ function displayWeatherCondition(response) {
 
   temperatureElement.innerHTML = Math.round(temperature);
   cityElement.innerHTML = response.data.city;
+  console.log(response.data.condition.description);
 }
 
 function searchCity(city) {

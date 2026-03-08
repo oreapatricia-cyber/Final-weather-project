@@ -18,8 +18,6 @@ function displayWeatherCondition(response) {
 
   let date = new Date(response.data.time * 1000);
   timeElement.innerHTML = formatDate(date);
-
-  // Weather icon
   iconElement.setAttribute(
     "src",
     `https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`,

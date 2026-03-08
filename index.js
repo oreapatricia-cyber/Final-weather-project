@@ -3,6 +3,7 @@ function displayWeatherCondition(response) {
   let cityElement = document.querySelector("#city");
   let timeElement = document.querySelector("#time");
   let temperature = response.data.temperature.current;
+  let date = new Date(response.data.time * 1000);
 
   temperatureElement.innerHTML = Math.round(temperature);
   cityElement.innerHTML = response.data.city;

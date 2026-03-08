@@ -11,8 +11,7 @@ function displayWeatherCondition(response) {
   temperatureElement.innerHTML = Math.round(response.data.temperature.current);
   let humidityElement = document.querySelector("#humidity");
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
-  let windElement = document.querySelector("#wind");
-  windElement.innerHTML = response.data.wind.speed;
+  let windspeedElement = document.querySelector("#wind-speed");
 }
 function searchCity(city) {
   let apiKey = "94bo483a37241b0t66efb57f3864046e";

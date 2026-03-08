@@ -9,6 +9,10 @@ function displayWeatherCondition(response) {
   let descriptionElement = document.querySelector("#description");
   descriptionElement.innerHTML = response.data.condition.description;
   temperatureElement.innerHTML = Math.round(response.data.temperature.current);
+  let humidityElement = document.querySelector("#humidity");
+  humidityElement.innerHTML = response.data.temperature.humidity;
+  let windElement = document.querySelector("#wind");
+  windElement.innerHTML = response.data.wind.speed;
   console.log(response.data.condition.description);
 }
 

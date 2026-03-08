@@ -8,6 +8,7 @@ function displayWeatherCondition(response) {
   cityElement.innerHTML = response.data.city;
   let descriptionElement = document.querySelector("#description");
   descriptionElement.innerHTML = response.data.condition.description;
+  temperatureElement.innerHTML = Math.round(response.data.temperature.current);
   console.log(response.data.condition.description);
 }
 

@@ -74,17 +74,43 @@ header {
   gap: 20px;
 }
 
-.weather-app-information h1 {
+.weather-details {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.weather-details h1 {
   margin: 0;
   font-size: 36px;
   color: #4b3f72;
 }
 
-.weather-app-information p {
-  margin: 5px 0 0;
+/* Time + description */
+.weather-meta {
+  margin: 0;
   font-size: 16px;
   color: #555;
-  line-height: 1.6;
+  line-height: 1.4;
+}
+
+#description {
+  text-transform: capitalize;
+  color: #4b3f72;
+  font-weight: 500;
+}
+
+/* Humidity + wind */
+.weather-extra {
+  margin: 0;
+  font-size: 15px;
+  color: #555;
+}
+
+#humidity,
+#wind-speed {
+  font-weight: 600;
+  color: #4b3f72;
 }
 
 /* Forecast Row */

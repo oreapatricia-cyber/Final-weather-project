@@ -80,15 +80,18 @@ header {
   color: #555;
   line-height: 1.6;
 }
-
-.current-temperature {
-  font-size: 48px;
-  font-weight: 500;
-  color: #4b3f72;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+.weather-forecast-day {
+  text-align: center;
+  color: rgba(39, 33, 66, 0.8);
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 10px;
 }
+.weather-forecast-icon {
+  font-size: 38px;
+  text-align: center;
+}
+
 footer {
   border-top: 2px solid rgba(65, 50, 100, 0.08);
   padding-top: 20px;

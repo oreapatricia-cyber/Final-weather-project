@@ -23,7 +23,7 @@ function displayWeatherCondition(response) {
     "src",
     `https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`,
   );
-  iconElement.setAttribute("alt", response.data.condition.description);
+  iconElement.setAttribute(response.data.condition.description);
 }
 
 function searchCity(city) {

@@ -93,6 +93,7 @@ header {
 }
 .weather-forecast-temperature {
   text-align: center;
+  margin-top: 10px;
   color: #4b3f72;
   display: flex;
   justify-content: center;

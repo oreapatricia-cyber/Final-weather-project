@@ -56,6 +56,18 @@ function handleSearch(event) {
   searchCity(searchInput.value);
 }
 
+function displayforecast() {
+  let forecast = document.querySelector("#forecast");
+  let days = ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  days.forEach(function (day) {
+    forecast.innerHTML += ` <div>
+            <div class="weather-forecast-day">${day}</div>
+            <div class="weather-forecast-icon">🌤️</div>
+            <div class="weather-forecast-temperature">18°C</div>
+          </div>`;
+  });
+}
+
 document.querySelector("#search-form").addEventListener("submit", handleSearch);
 
 searchCity("Miami");

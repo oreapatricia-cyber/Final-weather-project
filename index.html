@@ -1,80 +1,80 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/axios@1.13.2/dist/axios.min.js"></script>
-    <link rel="stylesheet" href="style.css" />
+  <main>
+    <div class="weather-app-information">
+      <div class="weather-details">
+        <h1 id="city">Miami</h1>
 
-    <title>Weather App</title>
-  </head>
+        <p class="weather-meta">
+          <span id="time"></span>
+          <span id="description">scattered clouds</span>
+        </p>
 
-  <body>
-    <div class="weather-app">
-      <header>
-        <form class="search-form" id="search-form">
-          <input
-            type="search"
-            placeholder="Enter a City..."
-            required
-            class="search-form-input"
-            id="search-form-input"
-          />
-          <input type="submit" value="Search" class="search-form-button" />
-        </form>
-      </header>
+        <p class="weather-extra">
+          Humidity: <span id="humidity"></span>%, Wind:
+          <span id="wind-speed"></span> km/h
+        </p>
+      </div>
 
-      <main>
-        <div class="weather-app-information">
-          <div class="weather-details">
-            <h1 id="city">Miami</h1>
-
-            <p class="weather-meta">
-              <span id="time"></span>
-              <span id="description">scattered clouds</span>
-            </p>
-
-            <p class="weather-extra">
-              Humidity: <span id="humidity"></span>%, Wind:
-              <span id="wind-speed"></span> km/h
-            </p>
-          </div>
-
-          <div class="current-temperature">
-            <img
-              id="weather-icon"
-              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png"
-              alt="Weather Icon"
-              class="weather-icon"
-            />
-            <span id="temperature"></span>°C
-          </div>
-        </div>
-        <div class="weather-forecast" id="forecast"></div>
-      </main>
-
-      <footer>
-        This project was coded by
-        <a href="https://github.com/oreapatricia-cyber" target="_blank">
-          Patricia Orea
-        </a>
-        and is
-        <a
-          href="https://github.com/oreapatricia-cyber/Final-weather-project"
-          target="_blank"
-        >
-          open-sourced on GitHub
-        </a>
-        and
-        <a href="https://patrimeteo.netlify.app/" target="_blank">
-          hosted on Netlify
-        </a>
-      </footer>
+      <div class="current-temperature">
+        <img
+          id="weather-icon"
+          src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png"
+          alt="Weather Icon"
+          class="weather-icon"
+        />
+        <span id="temperature"></span>°C
+      </div>
     </div>
-    <script src="index.js"></script>
-  </body>
-</html>
+
+    <div class="weather-forecast" id="forecast">
+      <div>
+        <div class="weather-forecast-day">Tuesday</div>
+        <div class="weather-forecast-icon">🌤️</div>
+        <div class="weather-forecast-temperature">18°C</div>
+      </div>
+
+      <div>
+        <div class="weather-forecast-day">Wednesday</div>
+        <div class="weather-forecast-icon">🌤️</div>
+        <div class="weather-forecast-temperature">18°C</div>
+      </div>
+
+      <div>
+        <div class="weather-forecast-day">Thursday</div>
+        <div class="weather-forecast-icon">🌤️</div>
+        <div class="weather-forecast-temperature">
+          <strong>18°C</strong>
+        </div>
+      </div>
+
+      <div>
+        <div class="weather-forecast-day">Friday</div>
+        <div class="weather-forecast-icon">🌤️</div>
+        <div class="weather-forecast-temperature">18°C</div>
+      </div>
+
+      <div>
+        <div class="weather-forecast-day">Saturday</div>
+        <div class="weather-forecast-icon">🌤️</div>
+        <div class="weather-forecast-temperature">18°C</div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    This project was coded by
+    <a href="https://github.com/oreapatricia-cyber" target="_blank">
+      Patricia Orea
+    </a>
+    and is
+    <a
+      href="https://github.com/oreapatricia-cyber/Final-weather-project"
+      target="_blank"
+    >
+      open-sourced on GitHub
+    </a>
+    and
+    <a href="https://patrimeteo.netlify.app/" target="_blank">
+      hosted on Netlify
+    </a>
+  </footer>
+</div>

@@ -84,7 +84,6 @@ function displayForecast() {
 
   forecastElement.innerHTML = forecastHTML;
 }
-
 document.querySelector("#search-form").addEventListener("submit", handleSearch);
 
 searchCity("Miami");

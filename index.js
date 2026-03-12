@@ -23,7 +23,6 @@ function displayWeatherCondition(response) {
   );
   iconElement.setAttribute("alt", response.data.condition.description);
 
-  // Load forecast for this city
   getForecast(response.data.city);
 }
 

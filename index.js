@@ -28,13 +28,13 @@ function displayWeatherCondition(response) {
 }
 
 function searchCity(city) {
-  let apiKey = "YOUR_REAL_API_KEY_HERE";
+  let apiKey = "94bo483a37241b0t66efb57f3864046e";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeatherCondition);
 }
 
 function getForecast(city) {
-  let apiKey = "YOUR_REAL_API_KEY_HERE";
+  let apiKey = "94bo483a37241b0t66efb57f3864046e";
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }

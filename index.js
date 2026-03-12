@@ -58,14 +58,23 @@ function handleSearch(event) {
 
 function displayforecast() {
   let forecast = document.querySelector("#forecast");
-  let days = ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  let days = [
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+  ];
   let forecasthtml = "";
 
   days.forEach(function (day) {
     forecast.innerHTML += ` <div>
             <div class="weather-forecast-day">${day}</div>
             <div class="weather-forecast-icon">🌤️</div>
-            <div class="weather-forecast-temperature">18°C</div>
+            <div class="weather-forecast-temperature">
+              <strong>18°C</strong>
+            </div>
           </div>`;
   });
   forecastElement.innerHTML = forecasthtml;

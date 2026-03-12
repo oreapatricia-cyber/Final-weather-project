@@ -85,6 +85,7 @@ function displayForecast(response) {
     }
   });
 
+  // Replace content — no duplicates
   forecastElement.innerHTML = forecastHTML;
 }
 

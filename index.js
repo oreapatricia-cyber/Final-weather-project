@@ -1,6 +1,4 @@
 function displayWeatherCondition(response) {
-  console.log(response.data.temperature.current);
-
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
   let timeElement = document.querySelector("#time");
@@ -24,12 +22,21 @@ function displayWeatherCondition(response) {
     `https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`,
   );
   iconElement.setAttribute("alt", response.data.condition.description);
+
+  // Load forecast for this city
+  getForecast(response.data.city);
 }
 
 function searchCity(city) {
-  let apiKey = "94bo483a37241b0t66efb57f3864046e";
+  let apiKey = "YOUR_REAL_API_KEY_HERE";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeatherCondition);
+}
+
+function getForecast(city) {
+  let apiKey = "YOUR_REAL_API_KEY_HERE";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function formatDate(date) {
@@ -50,40 +57,44 @@ function formatDate(date) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[date.getDay()];
+}
+
+function displayForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = "";
+
+  response.data.daily.forEach(function (day, index) {
+    if (index < 6) {
+      forecastHTML += `
+        <div class="weather-forecast-day-block">
+          <div class="weather-forecast-day">${formatDay(day.time)}</div>
+          <img 
+            src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${day.condition.icon}.png"
+            class="weather-forecast-icon"
+          />
+          <div class="weather-forecast-temperature">
+            <strong>${Math.round(day.temperature.maximum)}°</strong>
+            <span>${Math.round(day.temperature.minimum)}°</span>
+          </div>
+        </div>
+      `;
+    }
+  });
+
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function handleSearch(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#search-form-input");
   searchCity(searchInput.value);
 }
 
-function displayForecast() {
-  let forecastElement = document.querySelector("#forecast");
-
-  let days = [
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-    "Sunday",
-  ];
-
-  let forecastHTML = "";
-
-  days.forEach(function (day) {
-    forecastHTML += `
-      <div class="weather-forecast-day-block">
-        <div class="weather-forecast-day">${day}</div>
-        <div class="weather-forecast-icon">🌤️</div>
-        <div class="weather-forecast-temperature">
-          <strong>18°C</strong>
-        </div>
-      </div>
-    `;
-  });
-
-  forecastElement.innerHTML = forecastHTML;
-}
 document.querySelector("#search-form").addEventListener("submit", handleSearch);
 
+// Default city
 searchCity("Miami");
